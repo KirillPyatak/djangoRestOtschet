@@ -1,0 +1,19 @@
+<!-- myapp/templates/myapp/generate_report.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать отчет</title>
+</head>
+<body>
+    <h1>Создать отчет</h1>
+    <form method="post" action="{% url 'generate_report' %}">
+        {% csrf_token %}
+        <label for="format">Выберите формат отчета:</label>
+        <select name="format" id="format">
+            <option value="word">Word</option>
+            <option value="excel">Excel</option>
+        </select>
+        <button type="submit">Скачать отчет</button>
+    </form>
+</body>
+</html>
